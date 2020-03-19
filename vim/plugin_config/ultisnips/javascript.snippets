@@ -1,0 +1,148 @@
+snippet jlog "Log JSON object"
+console.log('\n============================\n');
+console.log(JSON.stringify($0, null, ' '));
+console.log('\n============================\n');
+endsnippet
+
+snippet clog "Log clearly"
+console.log('\n============================\n');
+console.log($0);
+console.log('\n============================\n');
+endsnippet
+
+snippet fn "Create named lambda"
+const $1 = ($2) => {
+	$0
+}
+endsnippet
+
+snippet fen "Create exported named lambda"
+const $1 = ($2) => {
+	$0
+}
+module.exports = $1;
+endsnippet
+
+snippet il "Import Logger"
+const logger = require('rmpay-logging').logger(module);
+endsnippet
+
+snippet li "Info Log"
+logger.info(\`\$\{MODULE_STRING\}: $0\`);
+endsnippet
+
+snippet ld "Debug Log"
+logger.debug(\`\$\{MODULE_STRING\}: $0\`);
+endsnippet
+
+snippet lw "Warn Log"
+logger.warn(\`\$\{MODULE_STRING\}: $0\`);
+endsnippet
+
+snippet le "Error Log"
+logger.error(\`\$\{MODULE_STRING\}: $0\`);
+endsnippet
+
+snippet ip "Import Promisify"
+const { promisify } = require('util');
+endsnippet
+
+snippet idbc "Import Promisify"
+const dbc = require('designbycontract');
+endsnippet
+snippet idb "Import DB Interaction"
+const dbInteraction = promisify(require('node-rmpay-svcutils').dbInteraction);
+endsnippet
+
+snippet ms "Create Module String"
+const MODULE_STRING = '$0';
+endsnippet
+
+snippet iq "Import query"
+const { $1 } = require('../impl/db');
+endsnippet
+
+snippet dbc "Insert DBC statement"
+dbc.requireWithMessage(dbc.is$1($2),\`\$\{MODULE_STRING\}: $0\`);
+endsnippet
+
+snippet yuc "Insert YUIDoc Class"
+/**
+ * @class $0
+*/
+endsnippet
+
+snippet yuf "Insert YUIDoc Function"
+/**
+ * $1 
+ *
+ *
+ * @method $2
+ * @param \{ $5 \} $0
+ * @return \{ $3 \} $4
+*/
+endsnippet
+
+snippet desc "Create Mocha Describe block"
+describe('$1', () => {
+	$0
+});
+endsnippet
+
+snippet it "Create Mocha it block"
+it('should $1', async () => {
+	$0
+});
+endsnippet
+
+snippet bf  "Create Mocha Before block"
+before(async () => {$0})
+endsnippet
+
+snippet be  "Create Mocha BeforeEach block"
+beforeEach(async () => {$0})
+endsnippet
+
+snippet af  "Create Mocha After block"
+after(async () => {$0})
+endsnippet
+
+snippet ae  "Create Mocha AfterEach block"
+afterEach(async () => {$0})
+endsnippet
+
+snippet msc "Import Mockery, Sinon and Chai"
+const mockery = require('mockery');
+const sinon = require('sinon');
+const { expect } = require('chai');
+endsnippet
+
+snippet exp "Chai Expect Statement"
+expect($1).to.$0;
+endsnippet
+
+snippet cb "Callback function"
+, ($1) => {
+	$0
+}
+endsnippet
+
+snippet exerr "Test for error"
+let thrownErr;
+
+try {
+	$0
+} catch (err) {
+	thrownErr = err;
+}
+
+expect(thrownErr).to.exist;
+expect(thrownErr.code).to.eql('$1');
+expect(thrownErr.extra.toLowerCase()).to.contain('$2');
+endsnippet
+
+snippet rt "Read seed template"
+
+const readTemplate = path => readFileSync(__dirname, `/seed/sql/\$\{path\}/.sql.mst`);
+
+endsnippet

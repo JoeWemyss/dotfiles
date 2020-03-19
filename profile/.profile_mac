@@ -1,0 +1,11 @@
+# fzf via Homebrew
+if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
+  source /usr/local/opt/fzf/shell/key-bindings.zsh
+  source /usr/local/opt/fzf/shell/completion.zsh
+fi
+
+export VIM=/usr/local/bin/vim
+
+# Use self-built version of VIM
+alias vim=$VIM
+

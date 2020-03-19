@@ -1,0 +1,13 @@
+[[ ! -z $CUSTOM_CONFIG_HOME ]] && CUSTOM_CONFIG_HOME='~/.config'
+
+[[ ! -d $CUSTOM_CONFIG_HOME ]] && mkdir $CUSTOM_CONFIG_HOME
+
+
+[[ ! -z $VIM_CONFIG_HOME ]] && VIM_CONFIG_HOME="$CUSTOM_CONFIG_HOME/vim"
+
+[[ ! -d $VIM_CONFIG_HOME ]] && mkdir $VIM_CONFIG_HOME
+
+rm -rf $VIM_CONFIG_HOME/*
+
+cp 
+
