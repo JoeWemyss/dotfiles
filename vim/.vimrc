@@ -106,11 +106,3 @@ so $VIM_CONFIG_DIR/plugin_config/misc.vim
 ""
 """ Revert Color to default when leaving Insert Mode
 ""autocmd InsertLeave * highlight  CursorLine ctermbg=Gray ctermfg=White
-
-
-
-let dbs = {
-    \ "dev" : $LOCAL_DB_URL
-    \}
-
-command -nargs=+ SetDB let:current_db=get(dbs, args)
