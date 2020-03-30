@@ -7,12 +7,14 @@ Plug 'itchyny/lightline.vim'
 
 " UTILITIES
 Plug 'vimwiki/vimwiki'
+Plug 'lervag/vimtex'
 Plug 'scrooloose/nerdcommenter' 
 Plug 'tpope/vim-surround'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-dispatch'
 Plug 'chrisbra/csv.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'diepm/vim-rest-console'
 
 " LANGUAGE
 Plug 'cohama/lexima.vim'

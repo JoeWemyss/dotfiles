@@ -70,6 +70,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 autocmd Filetype json setlocal tabstop=2
+autocmd Filetype yml setlocal tabstop=2
 
 " Set mustache sql as sql syntax
 au BufRead,BufNewFile *.sql.mst set filetype=sql
@@ -90,7 +91,7 @@ let g:lightline = {
 "let g:lightline = { 'colorscheme': 'darcula' }
 
 "" Source CoC.nvim config
-"so $VIM_CONFIG_DIR/plugin_config/coc.vim
+so $VIM_CONFIG_DIR/plugin_config/coc.vim
 
 so $VIM_CONFIG_DIR/plugin_config/misc.vim
 

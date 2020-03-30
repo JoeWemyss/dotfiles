@@ -3,8 +3,8 @@ let g:coc_user_config="~/dotfiles/vim/coc-settings.json"
 set hidden
 
 " Some servers have issues with backup files, see #649
-set nobackup
-set nowritebackup
+"set nobackup
+"set nowritebackup
 
 " Better display for messages
 set cmdheight=2
@@ -38,7 +38,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <cr> complete_info()["selected"] != \"-1" ? \"\<C-y>" : \"\<C-g>u\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)

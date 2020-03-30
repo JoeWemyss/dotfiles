@@ -2,10 +2,5 @@
   "tsserver.npm": "/Users/jwemyss/.nvm/versions/node/v10.16.3/bin/npm",
   "tsserver.log": "verbose",
   "tsserver.trace.server": "verbose",
-  "coc.preferences.formatOnSaveFiletypes": ["typescript", "ts", "javascript"],
-  "tslint.autoFixOnSave": true,
-  "tslint.jsEnable": true,
-  "tslint.configFile": "/Users/jwemyss/RouteMatchGit/com-config-eslint/Docker/content/.eslintrc.json",
-  "diagnostic.errorSign": "•",
-  "coc.prettier.configPath": "/Users/jwemyss/.prettierrc"
+  "diagnostic.errorSign": "•"
 }
