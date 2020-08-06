@@ -1,0 +1,42 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+
+
+conky.config = {
+	alignment = 'top_left',
+	background = true,
+	color2 = '5D7B86',
+	cpu_avg_samples = 2,
+	default_color = 'F9FAF9',
+	double_buffer = true,
+	font = 'Bitstream Vera Sans:size=8',
+	draw_shades = false,
+	gap_x = 25,
+	gap_y = 13,
+	minimum_width = 200,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 1.0,
+	use_xft = true,
+}
+
+conky.text = [[
+${font Latin Modern Mono Caps:bold:size=14}${alignc}${color 00ffae}$nodename
+${font Noto Sans:bold:size=8}${alignc}${desktop_name} ${desktop}/$desktop_number
+${font Noto Sans:bold:size=8}${alignc}    ${exec hostnamectl | grep System | cut -c21-40}
+${alignc}   ${exec hostnamectl | grep Architecture | cut -c7-30}
+${alignc}   ${exec hostnamectl | grep Kernel | cut -c13-32}
+${font Entopia:bold:size=12}${color 33E9FF}PERFORMANCE ${hr 2}${font}
+${offset 15}${color FFFDE2}System Uptime ${alignr}$color $uptime
+${offset 15}${color FFFDE2}RAM :$color $mem $memperc% ${color yellow}${membar 4}
+${offset 15}${color FFFDE2}Swap:$color $swap/$swapmax $swapperc% ${color yellow}${swapbar 4}
+${offset 15}${color FFFDE2}Battery: ${battery_percent BAT1}% ${color yellow}${alignr}${battery_bar 4, 130 BAT1}
+${offset 25}${font DejaVu Sans Mono:size=8}${battery_time BAT1}${font DejaVu Sans Mono:size=8}${color FFFDE2}
+${offset 15}Core 1   ${color ff8300}${cpubar cpu1 6}${color FFFDE2}
+${offset 15}Core 2   ${color ff8300}${cpubar cpu2 6}${color FFFDE2}
+${offset 15}Core 3   ${color ff8300}${cpubar cpu3 6}${color FFFDE2}
+${offset 15}Core 4   ${color ff8300}${cpubar cpu4 6}${color FFFDE2}
+${offset 15}${font}${color FFFDE2}Procs:$color $processes  ${color FFFDE2}Run:$color $running_processes Temp: ${acpitemp}°C
+
+]]

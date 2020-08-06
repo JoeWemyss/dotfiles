@@ -1,21 +1,11 @@
-"" Remap Esacpe to JK 
-inoremap jk <Esc>
+" source keymap
+source $VIM_CONFIG_DIR/.vimrc.keymap
 
-" Turn on syntax highlighting
-syntax on
-set nocompatible
-filetype plugin on
-
-" Increase History
-set history=500
 " Setup caching/backups
 set directory=$CUSTOM_CACHE_HOME/vim,~/,/tmp
 set backupdir=$CUSTOM_CACHE_HOME/vim,~/,/tmp
 set undodir=$CUSTOM_CACHE_HOME/vim,~/,/tmp
 set viminfo+=n$CUSTOM_CACHE_HOME/vim/viminfo
-
-" Set Hybrid numbers
-set number relativenumber
 
 " Autotoggle relative numbers
 :augroup numbertoggle
@@ -62,20 +52,7 @@ map <C-c> :w !pbcopy
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 
-" Add sensible backspace behaviour
-set backspace=indent,eol,start
 
-" Set up tab size
-set tabstop=4
-set shiftwidth=4
-set expandtab
-autocmd Filetype json setlocal tabstop=2
-autocmd Filetype yml setlocal tabstop=2
-
-" Set mustache sql as sql syntax
-au BufRead,BufNewFile *.sql.mst set filetype=sql
-
-"
 " Source plugins added with vim-plug
 so $VIM_CONFIG_DIR/plugins.vim
 

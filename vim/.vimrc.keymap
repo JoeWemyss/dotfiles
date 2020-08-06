@@ -1,0 +1,22 @@
+"" Remap Esacpe to JK
+inoremap jk <Esc>
+
+" Set Hybrid numbers
+set number relativenumber
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+autocmd Filetype json setlocal tabstop=2
+autocmd Filetype yml setlocal tabstop=2
+
+" Add sensible backspace behaviour
+set backspace=indent,eol,start
+
+" Turn on syntax highlighting
+syntax on
+set nocompatible
+filetype plugin on
+
+" Increase History
+set history=500

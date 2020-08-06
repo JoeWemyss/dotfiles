@@ -1,0 +1,5 @@
+set surround
+set commentary
+set highlightedyank
+
+source $CUSTOM_CONFIG_SOURCE/.vimrc.keymap

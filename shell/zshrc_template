@@ -1,3 +1,4 @@
+#!/bin/env/bash
 # +++++++++++++++ ZSH +++++++++++++++++++++
 
 export CUSTOM_CONFIG_SOURCE=~/dotfiles
@@ -62,6 +63,24 @@ source $ZSH/oh-my-zsh.sh
 
 # If using MAC, source iTerm shell integration
 # IS_MAC is set in $HOME/.local_env/.profile
-if [ $IS_MAC=true ]; then
+if [ "$IS_MAC" = true ]; then
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
+
+function mon_left_only () {
+    xrandr --output VGA1 --off --output eDP1 --off --output HDMI1 --primary --auto
+}
+
+
+function mon_right_only () {
+    xrandr --output HDMI1 --off --output eDP1 --off --output VGA1 --primary --auto
+}
+
+function mon_laptop () {
+    xrandr --output HDMI1 --off --output VGA1 --off --output eDP1 --primary --auto
+}
+
+function mon_both () {
+    xrandr --output eDP1 --off --output HDMI1 --primary --auto --output VGA1 --off 
+    xrandr --output VGA1 --right-of HDMI1 --auto 
+}
