@@ -1,5 +1,9 @@
 set surround
 set commentary
 set highlightedyank
+set ideajoin
 
-source $CUSTOM_CONFIG_SOURCE/.vimrc.keymap
+map <leader>r :action ReformatCode<CR>
+map <leader>b :action ToggleLineBreakpoint<CR>
+
+source $VIM_CONFIG_DIR/.vimrc.keymap
