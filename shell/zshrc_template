@@ -16,41 +16,24 @@ export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
 # +++++++++++++++ /ZSH +++++++++++++++++++++
 
 # Get local config options
-source $CUSTOM_CONFIG_SOURCE/profile/.profile
-
-# If oh-my-zsh is not installed, install it
-#if [ ! -d $ZSH ]; then
-    #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-    #mv "$HOME/.zshrc" "$HOME/.zshrc.ohmyzsh"
-    #ln -s "$CUSTOM_CONFIG_SOURCE/shell/zshrc_template" "$HOME/.zshrc"
-#fi  
-
-# If the spaceship prompt is not installed, install it
-#if [ ! -d  "$ZSH_CUSTOM/themes/spaceship-prompt" ]; then
-    #git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-    #ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-#fi  
+# shellcheck disable=SC1090
+source "$CUSTOM_CONFIG_SOURCE/profile/.profile"
 
 # OH-MY_ZSH Theme config
-ZSH_THEME="spaceship"
-SPACESHIP_PROMPT_ADD_NEWLINE="true"
-SPACESHIP_CHAR_SYMBOL="\uf0e7"
-SPACESHIP_CHAR_PREFIX="\uf296"
-SPACESHIP_CHAR_SUFFIX=(" ")
-SPACESHIP_CHAR_COLOR_SUCCESS="yellow"
-SPACESHIP_PROMPT_DEFAULT_PREFIX="$USER"
-SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
-SPACESHIP_USER_SHOW="true"
-
-# Source unoffical plugins
-local ZSH_CUSTOM_PLUGINS="$ZSH_CUSTOM/plugins"
-
-[ ! -d $ZSH_CUSTOM_PLUGINS/zsh-autosuggestions ] && git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
-[ ! -d $ZSH_CUSTOM_PLUGINS/zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-
-
+# shellcheck disable=SC2034
+{
+  ZSH_THEME="spaceship"
+  SPACESHIP_PROMPT_ADD_NEWLINE="true"
+  SPACESHIP_CHAR_SYMBOL="\uf0e7"
+  SPACESHIP_CHAR_PREFIX="\uf296"
+  SPACESHIP_CHAR_SUFFIX=(" ")
+  SPACESHIP_CHAR_COLOR_SUCCESS="yellow"
+  SPACESHIP_PROMPT_DEFAULT_PREFIX="$USER"
+  SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
+  SPACESHIP_USER_SHOW="true"
+}
 # ZSH Plugins
+# shellcheck disable=SC2034
 plugins=(
   git
   zsh-syntax-highlighting
@@ -59,11 +42,13 @@ plugins=(
 )
 
 # Auto configure OH MY ZSH
-source $ZSH/oh-my-zsh.sh
+# shellcheck disable=SC1090
+[ -f "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
 
 # If using MAC, source iTerm shell integration
 # IS_MAC is set in $HOME/.local_env/.profile
 if [ "$IS_MAC" = true ]; then
+    # shellcheck disable=SC1090
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
