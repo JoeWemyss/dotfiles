@@ -83,6 +83,10 @@ symlink_conky() {
   symlink "$LOCAL_CUSTOM_CONFIG_HOME/conky/" "conky.conf" "$LOCAL_CUSTOM_CONFIG_SOURCE/conky/custom/conkyrc"
 }
 
+symlink_ideavim() {
+  symlink "$HOME/" ".ideavimrc" "$LOCAL_CUSTOM_CONFIG_SOURCE/vim/.ideavimrc"
+}
+
 symlink() {
   local destPath="$1"
   local destFilePath="$1$2"
@@ -116,5 +120,6 @@ for element in "${PARTS[@]}"; do
   i3status) symlink_i3status ;;
   zsh) symlink_zsh ;;
   conky) symlink_conky ;;
+  ideavim) symlink_ideavim ;;
   esac
 done
